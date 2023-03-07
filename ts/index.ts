@@ -46,13 +46,6 @@ async function main () {
     console.log(`Query result: ${queryResult.output?.toString()}`);
 
     await api.disconnect();
-
-
-    console.log("Test")
-    const message2 = stringToU8a('this is our message');
-    const signature = pair.sign(message2);
-    const isValid = pair.verify(message2, signature, pair.publicKey);
-    console.log(isValid)
 }
 
 main().catch(console.error).finally(() => process.exit());
